@@ -28,6 +28,18 @@ app.use('/api/auth', authRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
+// Serve React frontend in production
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  
+  // Serve static files from React build
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  
+  // Handle React routing - return index.html for all non-API routes
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  });
+}
 
 
 // Health check endpoint

@@ -1,10 +1,12 @@
 import axios from 'axios';
 
+// Use environment variable in production, fallback to relative path
 const API_BASE_URL = process.env.REACT_APP_API_URL 
-  ? process.env.REACT_APP_API_URL + '/api' 
+  ? process.env.REACT_APP_API_URL + '/api'
   : '/api';
 
 axios.defaults.baseURL = API_BASE_URL;
+axios.defaults.withCredentials = true;
 
 export const authAPI = {
   checkPostcode: (postcode) => axios.post('/auth/check-postcode', { postcode }),
