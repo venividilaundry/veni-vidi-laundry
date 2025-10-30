@@ -37,9 +37,11 @@ export const adminAPI = {
   getCustomers: () => axios.get('/admin/customers')
 };
 
-export default {
+const api = {
   authAPI,
   subscriptionsAPI,
   ordersAPI,
   adminAPI
 };
+
+export default api;

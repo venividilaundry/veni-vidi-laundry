@@ -7,7 +7,6 @@ const Home = () => {
   const [postcode, setPostcode] = useState('');
   const [checkResult, setCheckResult] = useState(null);
   const [checking, setChecking] = useState(false);
-  const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
 
   const handlePostcodeCheck = async (e) => {
