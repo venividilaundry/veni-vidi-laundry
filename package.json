@@ -1,0 +1,13 @@
+{
+  "name": "veni-vidi-laundry",
+  "version": "1.0.0",
+  "description": "Veni Vidi Laundry booking platform",
+  "private": true,
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ../server && npm install && npm rebuild sqlite3",
+    "start": "cd server && npm start"
+  }
+}
