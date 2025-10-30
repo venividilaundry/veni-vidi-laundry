@@ -21,6 +21,8 @@ const authRoutes = require('./routes/auth');
 const subscriptionRoutes = require('./routes/subscriptions');
 const orderRoutes = require('./routes/orders');
 const adminRoutes = require('./routes/admin');
+const setupRoutes = require('./routes/setup');
+app.use('/api/setup', setupRoutes);
 
 
 // Use routes
@@ -28,6 +30,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/setup', setupRoutes); 
 // Serve React frontend in production
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');
