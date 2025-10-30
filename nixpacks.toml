@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = ["nodejs_18"]
+
+[phases.install]
+cmds = [
+  "cd client && npm install",
+  "cd ../server && npm install"
+]
+
+[phases.build]
+cmds = [
+  "cd client && npm run build",
+  "cd server && npm rebuild sqlite3"
+]
+
+[start]
+cmd = "cd server && npm start"
